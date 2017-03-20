@@ -3,7 +3,9 @@ public class PruebaMergeSort {
    Integer[] numbers = new Integer[3];
 
    //System.out.println(numbers.length);
+   int j = 0;
    for (int i = numbers.length - 1; i >= 0; i--) {
+
      numbers[i] = i;
    }
 
