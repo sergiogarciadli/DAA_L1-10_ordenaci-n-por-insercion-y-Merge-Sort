@@ -1,0 +1,23 @@
+{
+  "name": "DAA_L1-10_ordenaci-n-por-insercion-y-Merge-Sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiogarciadli/DAA_L1-10_ordenaci-n-por-insercion-y-Merge-Sort.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiogarciadli/DAA_L1-10_ordenaci-n-por-insercion-y-Merge-Sort/issues"
+  },
+  "homepage": "https://github.com/sergiogarciadli/DAA_L1-10_ordenaci-n-por-insercion-y-Merge-Sort#readme",
+  "dependencies": {
+    "gh-pages": "^0.12.0"
+  }
+}
