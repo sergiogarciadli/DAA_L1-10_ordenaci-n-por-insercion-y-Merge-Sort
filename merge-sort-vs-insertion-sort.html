@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Insertion Sort · GitBook</title>
+        <title>Merge Sort vs Insertion Sort · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="merge-sort.html" />
     
-    
-    <link rel="prev" href="chapter1.html" />
+    <link rel="prev" href="merge-sort.html" />
     
 
     </head>
@@ -115,7 +113,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="insertion-sort.html">
+        <li class="chapter " data-level="1.3" data-path="insertion-sort.html">
             
                 <a href="insertion-sort.html">
             
@@ -141,7 +139,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="merge-sort-vs-insertion-sort.html">
+        <li class="chapter active" data-level="1.5" data-path="merge-sort-vs-insertion-sort.html">
             
                 <a href="merge-sort-vs-insertion-sort.html">
             
@@ -184,7 +182,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Insertion Sort</a>
+        <a href="." >Merge Sort vs Insertion Sort</a>
     </h1>
 </div>
 
@@ -199,30 +197,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="insertion-sort">Insertion Sort</h1>
+                                <h3 id="merge-sort-vs-insertion-sort">Merge Sort vs Insertion Sort</h3>
 <hr>
-<p><em><strong>Insertion sort</strong></em> is an algorithm that computes the sort in a really close way for the human being, and it can be used easily for sorting a deck of cards randomly. It requires $${O(n^2)}$$ operations to sort a list of size n (in the worst case).</p>
-<p>At the beginning it has only one element, which is obviously the ordered set. After that, it has <em>k</em> ordered elements from lowest to highest, and it takes the <em>k+1</em> element and it compares with all of the already ordered elements, stoping when it finds a lower element (all of the higher elements have been moved one right position) or when there is no elements (all of the elements were moved and this one is the lowest). At this point, the <em>k+1</em> element gets inserted due to the other elements move.</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InsertionSort</span></span>{
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ordenacion</span><span class="hljs-params">(Integer[] numeros)</span> </span>{
-      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; numeros.length; i++){
-        <span class="hljs-keyword">int</span> value = numeros[i];
-        <span class="hljs-keyword">int</span> j = i - <span class="hljs-number">1</span>;
-
-        <span class="hljs-keyword">while</span>(j &gt;= <span class="hljs-number">0</span> &amp;&amp; numeros[j] &gt; value){
-          numeros[j + <span class="hljs-number">1</span>] = numeros[j];
-          j = j - <span class="hljs-number">1</span>;
-        }
-        numeros[j + <span class="hljs-number">1</span>] = value;
-      }
-  }
-}
-</code></pre>
-<p>Now let&apos;s see a situation where we call InsertionSort and the value we want to insert is lower than any element at the list. For example, if we are inserting 0 in [2,3,5,7,1], then all the list will move one position to the right. If we need <em>c</em> code lines to insert an element into the sublist, InsertionSort could need <em>ck</em> lines to insert an element into a k elements sublist. If it happens every time, the total time the insertion needs to compute is:</p>
-<p>$${c<em>1 + c</em>2 +...+ c<em>(n-1) = c</em>(1+2+...+(n-1))}$$</p>
-<p>Applying the arithmetic series formula:</p>
-<p>$${c*(n-1+1)((n-1)/2) = \frac{cn^2}{ 2} - \frac{cn}{2}}$$</p>
-<p>Using $${&#x2296;}$$ notation, the result is $${&#x2296;(n^2)}$$.</p>
+<p>As we checked before, Merge Sort is faster than Insertion sort, due to the first one is O(nlog(n)) and the second one is O(n^2).</p>
+<p>There is an optimization for Merge Sort method, where when the sublist is less size than 7, Insertion Sort is faster, so it is applied in this case. </p>
 
                                 
                                 </section>
@@ -250,14 +228,10 @@
 
             
                 
-                <a href="chapter1.html" class="navigation navigation-prev " aria-label="Previous page: Sort Algorithms">
+                <a href="merge-sort.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Merge Sort">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="merge-sort.html" class="navigation navigation-next " aria-label="Next page: Merge Sort">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -266,7 +240,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Insertion Sort","level":"1.3","depth":1,"next":{"title":"Merge Sort","level":"1.4","depth":1,"path":"merge-sort.md","ref":"merge-sort.md","articles":[]},"previous":{"title":"Sort Algorithms","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"insertion-sort.md","mtime":"2017-03-21T10:21:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-21T10:25:29.403Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Merge Sort vs Insertion Sort","level":"1.5","depth":1,"previous":{"title":"Merge Sort","level":"1.4","depth":1,"path":"merge-sort.md","ref":"merge-sort.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"merge-sort-vs-insertion-sort.md","mtime":"2017-03-21T10:24:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-21T10:25:29.403Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
